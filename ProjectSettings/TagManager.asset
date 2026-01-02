@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - SolidObject
+  - MonsterFied
+  - 
+  - Interactable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Bacground
+    uniqueID: 459579699
+    locked: 0
+  - name: ROAD
+    uniqueID: 1436076079
+    locked: 0
+  - name: ProbEnd
+    uniqueID: 1261638153
+    locked: 0
+  - name: SOlid
+    uniqueID: 331753071
+    locked: 0
+  - name: NPC
+    uniqueID: 897406307
+    locked: 0
+  - name: Player
+    uniqueID: 3306749591
+    locked: 0
+  - name: ProbFront
+    uniqueID: 2077162411
+    locked: 0
