@@ -263,7 +263,7 @@ public class CreateCharacterController : MonoBehaviour
     }
 
     public async Task OnLoadLevel(){
-        // UserStatus.Instance.SendDataToFirestore(userId);
+        //UserStatus.Instance.SendDataToFirestore(userId);
         PopupManager.Instance.OpenLoading("isFadeIn");
         bool result = await UserStatus.Instance.useCase.SendDataToFirestore(userId);
 
