@@ -59,3 +59,13 @@ Desktop.ini
 *.exe
 *.app
 *.unitypackage
+
+# ===============================
+# Firebase (IMPORTANT)
+# ===============================
+Assets/Firebase/
+Assets/**/Firebase/
+
+# Firebase native plugins (ไฟล์ใหญ่)
+*.so
+*.bundle
