@@ -1,0 +1,746 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8688510998625113518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7676093984846334774}
+  - component: {fileID: 2664686636168056776}
+  m_Layer: 0
+  m_Name: SkillCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7676093984846334774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688510998625113518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.702717, y: -0.08400819, z: -0.62444097}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2664686636168056776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688510998625113518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28ab9c49d3a8ff458b3ba3d76cb4748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillcore:
+  - skillID: SKI_000_NormalAttack
+    skillName: Normal Attack
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: d0a7e60eb7de34c4497ec8f212c449eb, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 0
+    SkillHit: 1
+    SkillLength: 2
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill:
+    - SkillPhysicalAttack: 100
+      SkillMagicalAttack: 100
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: KnockBack
+      skillDuration: 1
+      skillValue: 0
+    _VFX:
+    - {fileID: 5084593807307492970, guid: c4694549bc316f54bad79e6111b3cac0, type: 3}
+    - {fileID: 3892207524200374700, guid: 8e12e02ae1938714fa4c8058cc0d9c8b, type: 3}
+    STR: 0
+    AGI: 0
+    VIT: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+  - skillID: SKI_000_Move
+    skillName: Move
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 40406c3546f60574aab2ce38b91b17ad, type: 3}
+    skillType: 2
+    moveSkill: 1
+    SkillCost: 0
+    SkillHit: 1
+    SkillLength: 1
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: Move
+      skillDuration: 2
+      skillValue: 0
+    debuffSkill: []
+    _VFX: []
+    STR: 0
+    AGI: 0
+    VIT: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+  - skillID: SKI_001_Bash
+    skillName: Bash
+    SkillDescription: Hit enemy with high damage.
+    skillIconPath: {fileID: 21300000, guid: b3771bac0fed0c04c99d5b83a7db9b79, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 10
+    SkillHit: 1
+    SkillLength: 2
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill:
+    - SkillPhysicalAttack: 220
+      SkillMagicalAttack: 0
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Stun
+      skillDuration: 1
+      skillValue: 0
+    - skillbuff: KnockBack
+      skillDuration: 1
+      skillValue: 0
+    _VFX:
+    - {fileID: 5084593807307492970, guid: c4694549bc316f54bad79e6111b3cac0, type: 3}
+    - {fileID: 3892207524200374700, guid: 8e12e02ae1938714fa4c8058cc0d9c8b, type: 3}
+    STR: 5
+    AGI: 0
+    VIT: 3
+    DEX: 0
+    INT: 0
+    LCK: 0
+  - skillID: SKI_002_FireBall
+    skillName: FireBall
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: b9aa38776ee1c384f8736756a9e3684c, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 20
+    SkillHit: 2
+    SkillLength: 3
+    Side: 0000000001000000
+    SkillSubWeapon: 
+    elementType: 2
+    attackSkill:
+    - SkillPhysicalAttack: 0
+      SkillMagicalAttack: 125
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Burn
+      skillDuration: 3
+      skillValue: 25
+    _VFX:
+    - {fileID: 7872636093809159554, guid: a7447c41d07b3b348b82b6e453aa302a, type: 3}
+    - {fileID: 4328909942226031014, guid: 8669d9e6c41215144a33da57a641cf44, type: 3}
+    STR: 0
+    AGI: 0
+    VIT: 0
+    DEX: 5
+    INT: 10
+    LCK: 5
+  - skillID: SKI_003_BraveSpirit
+    skillName: BraveSpirit
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 5236c26d67c870d4588490e0535dd029, type: 3}
+    skillType: 2
+    moveSkill: 0
+    SkillCost: 10
+    SkillHit: 0
+    SkillLength: 100
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: AttackUP
+      skillDuration: 5
+      skillValue: 25
+    debuffSkill: []
+    _VFX:
+    - {fileID: 3375865146376954710, guid: 3cbf5a827f940c84588dfccd19d0fd9b, type: 3}
+    STR: 10
+    AGI: 0
+    VIT: 5
+    DEX: 0
+    INT: 10
+    LCK: 0
+  - skillID: SKI_004_WolfStrike
+    skillName: WolfStrike
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: f24f60a3ff73b46408a8f3bcba33ae23, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 40
+    SkillHit: 3
+    SkillLength: 3
+    Side: 
+    SkillSubWeapon: 
+    elementType: 4
+    attackSkill:
+    - SkillPhysicalAttack: 150
+      SkillMagicalAttack: 150
+    buffSkill:
+    - skillbuff: 
+      skillDuration: 0
+      skillValue: 0
+    debuffSkill:
+    - skillbuff: Stun
+      skillDuration: 1
+      skillValue: 0
+    _VFX:
+    - {fileID: 8974175985810312938, guid: fa14f339392f8d540b53dcdee7f2bd6a, type: 3}
+    - {fileID: 1167389909359102263, guid: 202f3f3821d5fd2419adcb80d070d9e7, type: 3}
+    STR: 1
+    AGI: 1
+    VIT: 1
+    DEX: 1
+    INT: 1
+    LCK: 0
+  - skillID: SKI_006_HookShot
+    skillName: HookShot
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 007e5e56627da43aca89e95717b5f36b, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 10
+    SkillHit: 1
+    SkillLength: 6
+    Side: 
+    SkillSubWeapon: 
+    elementType: 7
+    attackSkill:
+    - SkillPhysicalAttack: 10
+      SkillMagicalAttack: 0
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Pull
+      skillDuration: 3
+      skillValue: 4
+    _VFX: []
+    STR: 0
+    AGI: 10
+    VIT: 0
+    DEX: 15
+    INT: 0
+    LCK: 5
+  - skillID: SKI_007_FocusFire
+    skillName: FocusFire
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: e0dd899c3b299483cb7b95fda0dd6f72, type: 3}
+    skillType: 2
+    moveSkill: 0
+    SkillCost: 20
+    SkillHit: 4
+    SkillLength: 100
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: RangeUP
+      skillDuration: 4
+      skillValue: 4
+    - skillbuff: AccuracyUP
+      skillDuration: 4
+      skillValue: 30
+    debuffSkill: []
+    _VFX: []
+    STR: 0
+    AGI: 15
+    VIT: 10
+    DEX: 15
+    INT: 0
+    LCK: 0
+  - skillID: SKI_008_PoisionBlade
+    skillName: PoisionBlade
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 3fdaf9abc16eb6d4d8132707156fec59, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 20
+    SkillHit: 3
+    SkillLength: 0
+    Side: 
+    SkillSubWeapon: 
+    elementType: 5
+    attackSkill:
+    - SkillPhysicalAttack: 60
+      SkillMagicalAttack: 10
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Poision
+      skillDuration: 5
+      skillValue: 0
+    _VFX:
+    - {fileID: 3892207524200374700, guid: 8e12e02ae1938714fa4c8058cc0d9c8b, type: 3}
+    STR: 20
+    AGI: 5
+    VIT: 0
+    DEX: 20
+    INT: 20
+    LCK: 0
+  - skillID: SKI_009_GhostWalk
+    skillName: GhostWalk
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: acece8824cf8345019803e1c5a9920fc, type: 3}
+    skillType: 2
+    moveSkill: 1
+    SkillCost: 20
+    SkillHit: 0
+    SkillLength: 3
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: Move
+      skillDuration: 3
+      skillValue: 0
+    - skillbuff: FleeUp
+      skillDuration: 2
+      skillValue: 20
+    debuffSkill: []
+    _VFX: []
+    STR: 0
+    AGI: 10
+    VIT: 10
+    DEX: 10
+    INT: 10
+    LCK: 0
+  - skillID: SKI_010_ShockWave
+    skillName: ShockWave
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: f21ba536144b14c5fb666a506f4f455c, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 20
+    SkillHit: 4
+    SkillLength: 3
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill:
+    - SkillPhysicalAttack: 60
+      SkillMagicalAttack: 60
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: KnockBack
+      skillDuration: 1
+      skillValue: 0
+    _VFX:
+    - {fileID: 3892207524200374700, guid: 8e12e02ae1938714fa4c8058cc0d9c8b, type: 3}
+    STR: 25
+    AGI: 10
+    VIT: 10
+    DEX: 10
+    INT: 25
+    LCK: 10
+  - skillID: SKI_011_Dash
+    skillName: Dash
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 25e80301e618f6b4099e417308d42923, type: 3}
+    skillType: 2
+    moveSkill: 1
+    SkillCost: 10
+    SkillHit: 1
+    SkillLength: 3
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: Move
+      skillDuration: 3
+      skillValue: 0
+    - skillbuff: AttaclUp
+      skillDuration: 2
+      skillValue: 10
+    debuffSkill:
+    - skillbuff: DefanseDown
+      skillDuration: 2
+      skillValue: 10
+    _VFX: []
+    STR: 15
+    AGI: 15
+    VIT: 0
+    DEX: 5
+    INT: 0
+    LCK: 0
+  - skillID: SKI_012_Teleport
+    skillName: Teleport
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 86d411acf46314b4dab36ce39fc8d044, type: 3}
+    skillType: 2
+    moveSkill: 1
+    SkillCost: 10
+    SkillHit: 1
+    SkillLength: 4
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: Move
+      skillDuration: 3
+      skillValue: 0
+    - skillbuff: Heal
+      skillDuration: 1
+      skillValue: 5
+    debuffSkill:
+    - skillbuff: DefanseDown
+      skillDuration: 2
+      skillValue: 10
+    _VFX: []
+    STR: 0
+    AGI: 0
+    VIT: 5
+    DEX: 15
+    INT: 15
+    LCK: 0
+  - skillID: SKI_013_LightingBall
+    skillName: LightingBall
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: a4aaa4d776ac9498e81bee0ce202d2a4, type: 3}
+    skillType: 1
+    moveSkill: 0
+    SkillCost: 80
+    SkillHit: 3
+    SkillLength: 4
+    Side: 0000000001000000
+    SkillSubWeapon: 
+    elementType: 4
+    attackSkill:
+    - SkillPhysicalAttack: 0
+      SkillMagicalAttack: 100
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: KnockBack
+      skillDuration: 1
+      skillValue: 0
+    _VFX:
+    - {fileID: 232204733585064656, guid: 784c30dfa704954418eee9c287fa9d3e, type: 3}
+    - {fileID: 5391451172584010394, guid: b990b0b88403e8b4cb5833f86c85b843, type: 3}
+    STR: 5
+    AGI: 5
+    VIT: 5
+    DEX: 15
+    INT: 15
+    LCK: 10
+  - skillID: SKI_014_EarthDrive
+    skillName: EarthDrive
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 9566e161a53a94e03bd6431d1afef40b, type: 3}
+    skillType: 1
+    moveSkill: 0
+    SkillCost: 50
+    SkillHit: 2
+    SkillLength: 3
+    Side: 
+    SkillSubWeapon: 
+    elementType: 3
+    attackSkill:
+    - SkillPhysicalAttack: 20
+      SkillMagicalAttack: 150
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Stun
+      skillDuration: 1
+      skillValue: 0
+    _VFX: []
+    STR: 27
+    AGI: 0
+    VIT: 0
+    DEX: 0
+    INT: 27
+    LCK: 0
+  - skillID: SKI_015_FurySwip
+    skillName: FurySwip
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 48dc6fd6faf154d62b5114a76c7566b1, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 120
+    SkillHit: 5
+    SkillLength: 3
+    Side: 
+    SkillSubWeapon: 
+    elementType: 7
+    attackSkill:
+    - SkillPhysicalAttack: 200
+      SkillMagicalAttack: 0
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Bleed
+      skillDuration: 2
+      skillValue: 5
+    _VFX:
+    - {fileID: 3524063348070475597, guid: 9c80652a85dcbfb4c99a7e7647dcd7fe, type: 3}
+    - {fileID: 914638274998928798, guid: 5b8155bdfb239624e8428b7e3f3630a4, type: 3}
+    STR: 30
+    AGI: 30
+    VIT: 0
+    DEX: 10
+    INT: 0
+    LCK: 0
+  - skillID: SKI_016_WeaponBreaking
+    skillName: WeaponBreaking
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 27b5f08fd12390b4893da23139edd113, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 120
+    SkillHit: 1
+    SkillLength: 2
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill:
+    - SkillPhysicalAttack: 180
+      SkillMagicalAttack: 180
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Disarms
+      skillDuration: 4
+      skillValue: 0
+    - skillbuff: Weapon break
+      skillDuration: 100
+      skillValue: 50
+    _VFX: []
+    STR: 25
+    AGI: 0
+    VIT: 25
+    DEX: 10
+    INT: 0
+    LCK: 0
+  - skillID: SKI_018_TerraVortex
+    skillName: TerraVortex
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 6568b3cdeb7554ba39067d3d168bfec8, type: 3}
+    skillType: 1
+    moveSkill: 0
+    SkillCost: 200
+    SkillHit: 10
+    SkillLength: 4
+    Side: 
+    SkillSubWeapon: 
+    elementType: 1
+    attackSkill:
+    - SkillPhysicalAttack: 0
+      SkillMagicalAttack: 60
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Slow
+      skillDuration: 6
+      skillValue: 0
+    _VFX: []
+    STR: 0
+    AGI: 0
+    VIT: 0
+    DEX: 30
+    INT: 30
+    LCK: 30
+  - skillID: SKI_019_Slash
+    skillName: Slash
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: cc39dd2c402116e4281ab06512b964fc, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 80
+    SkillHit: 2
+    SkillLength: 2
+    Side: 
+    SkillSubWeapon: 
+    elementType: 7
+    attackSkill:
+    - SkillPhysicalAttack: 1000
+      SkillMagicalAttack: 0
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Bleed
+      skillDuration: 3
+      skillValue: 5
+    - skillbuff: Slow
+      skillDuration: 5
+      skillValue: 0
+    _VFX: []
+    STR: 35
+    AGI: 0
+    VIT: 0
+    DEX: 35
+    INT: 0
+    LCK: 15
+  - skillID: SKI_020_ThunderStrom
+    skillName: ThunderStrom
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: b6deb0d871d3444f99b2f22dd3b3d1eb, type: 3}
+    skillType: 1
+    moveSkill: 0
+    SkillCost: 220
+    SkillHit: 10
+    SkillLength: 3
+    Side: 
+    SkillSubWeapon: 
+    elementType: 4
+    attackSkill:
+    - SkillPhysicalAttack: 0
+      SkillMagicalAttack: 60
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Stun
+      skillDuration: 2
+      skillValue: 0
+    - skillbuff: Bleed
+      skillDuration: 4
+      skillValue: 0
+    _VFX: []
+    STR: 0
+    AGI: 0
+    VIT: 0
+    DEX: 35
+    INT: 35
+    LCK: 35
+  - skillID: SKI_021_Explosion
+    skillName: Explosion
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: ce6cdf398ebffb940a2a0ab760c57d28, type: 3}
+    skillType: 1
+    moveSkill: 0
+    SkillCost: 150
+    SkillHit: 1
+    SkillLength: 4
+    Side: 
+    SkillSubWeapon: 
+    elementType: 2
+    attackSkill:
+    - SkillPhysicalAttack: 10
+      SkillMagicalAttack: 1000
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Bleed
+      skillDuration: 2
+      skillValue: 0
+    - skillbuff: Burn
+      skillDuration: 5
+      skillValue: 0
+    _VFX: []
+    STR: 0
+    AGI: 0
+    VIT: 0
+    DEX: 30
+    INT: 30
+    LCK: 10
+  - skillID: SKI_022_TitanForm
+    skillName: TitanForm
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 6e14242dc1f595f4eb4caa32a1cabdba, type: 3}
+    skillType: 2
+    moveSkill: 0
+    SkillCost: 150
+    SkillHit: 1
+    SkillLength: 4
+    Side: 
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: AttackUp
+      skillDuration: 10
+      skillValue: 100
+    - skillbuff: DefenseUp
+      skillDuration: 10
+      skillValue: 100
+    - skillbuff: HealthUp
+      skillDuration: 10
+      skillValue: 100
+    - skillbuff: Heal
+      skillDuration: 10
+      skillValue: 50
+    - skillbuff: StatusPlus
+      skillDuration: 10
+      skillValue: 20
+    debuffSkill: []
+    _VFX: []
+    STR: 40
+    AGI: 0
+    VIT: 40
+    DEX: 0
+    INT: 10
+    LCK: 0
+  - skillID: SKI_023_Heal
+    skillName: Heal
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: 7921059d09630584ea1508b8244247d9, type: 3}
+    skillType: 2
+    moveSkill: 0
+    SkillCost: 50
+    SkillHit: 1
+    SkillLength: 100
+    Side: 00000000
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill: []
+    buffSkill:
+    - skillbuff: Heal
+      skillDuration: 10
+      skillValue: 20
+    debuffSkill: []
+    _VFX:
+    - {fileID: 204829191522970610, guid: 1c59aa8a656aa50418c92ee209f684d1, type: 3}
+    - {fileID: 8444277389435441986, guid: 60b02237f30846b49bb5eef6eb938ed4, type: 3}
+    STR: 0
+    AGI: 0
+    VIT: 10
+    DEX: 10
+    INT: 10
+    LCK: 0
+  - skillID: SKI_024_PoisonWave
+    skillName: PoisonWave
+    SkillDescription: 
+    skillIconPath: {fileID: 21300000, guid: f1840673d6d584da0b3a21cb14586d91, type: 3}
+    skillType: 0
+    moveSkill: 0
+    SkillCost: 100
+    SkillHit: 1
+    SkillLength: 4
+    Side: 00000000
+    SkillSubWeapon: 
+    elementType: 0
+    attackSkill:
+    - SkillPhysicalAttack: 600
+      SkillMagicalAttack: 600
+    buffSkill: []
+    debuffSkill:
+    - skillbuff: Poison
+      skillDuration: 10
+      skillValue: 5
+    _VFX:
+    - {fileID: 3375865146376954710, guid: 3cbf5a827f940c84588dfccd19d0fd9b, type: 3}
+    - {fileID: 8444277389435441986, guid: 60b02237f30846b49bb5eef6eb938ed4, type: 3}
+    STR: 30
+    AGI: 0
+    VIT: 0
+    DEX: 10
+    INT: 30
+    LCK: 30

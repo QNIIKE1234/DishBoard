@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78fb2dc3238c5a40b154f3c94efd99a, type: 3}
+  m_Name: ENE001_2
+  m_EditorClassIdentifier: 
+  description: 
+  LEVEL: 0
+  NAME: Low Mercenary
+  CLASSNAME: 
+  ELEMENTAL: 2
+  playerSprite: {fileID: 21300000, guid: 20aed25b050a85f4dbdc9fcc820f8867, type: 3}
+  enemySprite: {fileID: 21300000, guid: 20aed25b050a85f4dbdc9fcc820f8867, type: 3}
+  MaxHP: 150
+  MaxMP: 100
+  ATK: 100
+  DEF: 20
+  SPELL: 20
+  SPELLGUARD: 20
+  STRIKE: 100
+  COUTER: 200
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 869a98a2eb04ba64f8616bcdcb1fd88d, type: 2}
+    Slevel: 2
+  - moveBase: {fileID: 11400000, guid: 7174e07fbacd5cb4aa76f35cfe6c3941, type: 2}
+    Slevel: 2
+  - moveBase: {fileID: 11400000, guid: dfbb1a635d3f6ba41a0cda1877aa263e, type: 2}
+    Slevel: 2
+  - moveBase: {fileID: 11400000, guid: 9f33004f2f5340641aae80a9216c771a, type: 2}
+    Slevel: 2
+  EXP: 0
+  COIN: 0

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "838700312210",
+    "project_id": "pastdb-caefe",
+    "storage_bucket": "pastdb-caefe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838700312210:android:8514786cac19aaaffda84b",
+        "android_client_info": {
+          "package_name": "com.pastDB.firebaseDB"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-cKy6Hww28EWhbwk7AyK_rZauiHda4zs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

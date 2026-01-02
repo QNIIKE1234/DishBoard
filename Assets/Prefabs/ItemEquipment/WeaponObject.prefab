@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8172554386526207291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3436813813766428813}
+  - component: {fileID: 8734505611462476189}
+  m_Layer: 0
+  m_Name: WeaponObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3436813813766428813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172554386526207291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.49318945, y: -0.5443729, z: 313.44403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8734505611462476189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172554386526207291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20091747c66b9e948905f93c6d5e3ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+  - WeaponImg: {fileID: 21300000, guid: f441d14f1f29bd641b83b742b1b06940, type: 3}
+    WeaponIcon: {fileID: 21300000, guid: 850dde0dd332cf148abe571ed0ebdd80, type: 3}
+    setID: WEAPON_001
+    name: Kanata
+    className: None
+    Type: Weapon
+    Attack: 25
+    Mattack: 0
+    Accuracy: 5
+    Crit: 5
+    STR: 5
+    VIT: 0
+    AGI: 2
+    INT: 0
+    DEX: 5
+    LCK: 0
+    description: Beginner Katana is normally stat. ATK+25,ACC+5, CRIT +5 , STR+5,
+      AGI+2 , DEX + 5.
+  - WeaponImg: {fileID: 21300000, guid: f74672449328e8f44a1cf358c55a6f92, type: 3}
+    WeaponIcon: {fileID: 0}
+    setID: WEAPON_002
+    name: Borrow Sword
+    className: None
+    Type: Weapon
+    Attack: 20
+    Mattack: 15
+    Accuracy: 10
+    Crit: 5
+    STR: 3
+    VIT: 0
+    AGI: 0
+    INT: 3
+    DEX: 2
+    LCK: 2
+    description: 
+  - WeaponImg: {fileID: 21300000, guid: 19b953844d5adda46b4b881754179aef, type: 3}
+    WeaponIcon: {fileID: 21300000, guid: fa4046ad5afbc2a42a74ac885e294b5e, type: 3}
+    setID: WEAPON_003
+    name: Saw Sword
+    className: None
+    Type: Weapon
+    Attack: 40
+    Mattack: 0
+    Accuracy: 5
+    Crit: 10
+    STR: 5
+    VIT: 5
+    AGI: -5
+    INT: 0
+    DEX: 3
+    LCK: 3
+    description: Weapon is very shape with high damage. ATK+40, ACC+5 , CRIT +10,
+      STR +5 , VIT + 5 , AGI -5 , DEX + 3 , LCK + 3.
+  - WeaponImg: {fileID: 21300000, guid: 2fc7a469c6e2e2c4c819bd6a5e20219f, type: 3}
+    WeaponIcon: {fileID: 21300000, guid: 0d05e192e6ef42e4a8232b4459f57df6, type: 3}
+    setID: WEAPON_004
+    name: Holy Sword
+    className: None
+    Type: Weapon
+    Attack: 25
+    Mattack: 25
+    Accuracy: 10
+    Crit: 10
+    STR: 3
+    VIT: 0
+    AGI: 0
+    INT: 3
+    DEX: 5
+    LCK: 5
+    description: This sword is weapon of Crusader with holy damage. ATK+25 , MATK
+      +25 , ACC + 10 , CRIT +10 , STR +3 , INT + 3 , DEX + 5 , LCK + 5.
+  - WeaponImg: {fileID: 21300000, guid: b066900b7ca5b3c45b1500c9e99477c3, type: 3}
+    WeaponIcon: {fileID: 21300000, guid: f4f5b65b45aefaa479179a755e021918, type: 3}
+    setID: WEAPON_008
+    name: Red Opal Wand
+    className: None
+    Type: Weapon
+    Attack: 0
+    Mattack: 30
+    Accuracy: 10
+    Crit: 5
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 5
+    DEX: 5
+    LCK: 0
+    description: Beginner wand with normally magic damage. MATK +30 , ACC +10 , CRIT
+      + 5 , INT + 5 , DEX + 5.
+  - WeaponImg: {fileID: 21300000, guid: 53c39a233c36cf8439090638198e4b9f, type: 3}
+    WeaponIcon: {fileID: 21300000, guid: 4fee0d9906119ad42a7b699e5e7257f8, type: 3}
+    setID: WEAPON_006
+    name: Chop Chop
+    className: None
+    Type: Weapon
+    Attack: 60
+    Mattack: 0
+    Accuracy: -5
+    Crit: 0
+    STR: 10
+    VIT: 2
+    AGI: -5
+    INT: 0
+    DEX: 0
+    LCK: 0
+    description: Chop Chop is weapon of High Orc, Too much heavy but deal more damage.
+      ATK+60 , ACC -5 ,STR +10, VIT+2 , AGI -5.
+  - WeaponImg: {fileID: 21300000, guid: 19adb4383db0bf641a132ccf73a75888, type: 3}
+    WeaponIcon: {fileID: 21300000, guid: acf4dab66eddec94e8d46cbaa593ea63, type: 3}
+    setID: WEAPON_008
+    name: Eys of Sphinx
+    className: None
+    Type: Weapon
+    Attack: 0
+    Mattack: 45
+    Accuracy: 5
+    Crit: 5
+    STR: 0
+    VIT: -5
+    AGI: 0
+    INT: 15
+    DEX: 5
+    LCK: 0
+    description: This wand has knowladge of Sphinx and deal damage with curse magical.
+      MATK +45 , ACC +5 ,CRIT +5 , VIT -5 , INT + 15, DEX +5.
+  - WeaponImg: {fileID: 21300000, guid: 5585e29be49088242bf6e30c291b1917, type: 3}
+    WeaponIcon: {fileID: 21300000, guid: 31343e61ccebd994eb8b75b52998cd22, type: 3}
+    setID: WEAPON_005
+    name: Theif Dagger
+    className: None
+    Type: Weapon
+    Attack: 25
+    Mattack: 0
+    Accuracy: 10
+    Crit: 10
+    STR: 0
+    VIT: 0
+    AGI: 15
+    INT: 0
+    DEX: 10
+    LCK: 10
+    description: Beginner Dagger . ATK +25, ACC +10 ,CRIT +10 , AGI +15 , DEX +10
+      , LCK + 10.
+  offHand:
+  - ImageIcon: {fileID: 21300000, guid: 0a8212613a288d342afa1bd286518149, type: 3}
+    setID: OFFHAND_001
+    name: 
+    className: 
+    Type: 
+    Attack: 0
+    Mattack: 0
+    Accuracy: 0
+    Crit: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0
+    description: 
+  - ImageIcon: {fileID: 21300000, guid: a9967c1e8313aad4d9b04d1a5128b9c0, type: 3}
+    setID: OFFHAND_002
+    name: 
+    className: 
+    Type: 
+    Attack: 0
+    Mattack: 0
+    Accuracy: 0
+    Crit: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0
+    description: 

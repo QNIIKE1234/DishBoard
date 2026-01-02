@@ -1,0 +1,265 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6436003451538376368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 630273109416064892}
+  - component: {fileID: 4276743284473055898}
+  m_Layer: 0
+  m_Name: ClassDataPrefabs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &630273109416064892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6436003451538376368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.030238, y: -4.149276, z: 265.25766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4276743284473055898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6436003451538376368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006a6ade8705af34d9726a93a78c0ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  classData:
+  - Class: WarriorClass
+    Health: 300
+    Mana: 150
+    Attack: 50
+    MagicAttack: 10
+    Defense: 20
+    MagicDefense: 10
+    Accuracy: 50
+    Flee: 10
+    Crit: 20
+    STR: 5
+    VIT: 3
+    AGI: 2
+    DEX: 2
+    INT: 1
+    LCK: 3
+    moves:
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_000_NormalAttack
+      skillName: NormalAttack
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 1
+      skillCode: SKI_000_Move
+      skillName: Move
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 1
+      skillIndex: 0
+      skillCode: SKI_001_Bash
+      skillName: Bash
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 2
+      skillIndex: 0
+      skillCode: SKI_003_BraveSpirit
+      skillName: BraveSpirit
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 5
+      skillIndex: 0
+      skillCode: SKI_004_WolfStrike
+      skillName: WolfStrike
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 7
+      skillIndex: 0
+      skillCode: SKI_011_Dash
+      skillName: Dash
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 10
+      skillIndex: 0
+      skillCode: SKI_016_WeaponBreaking
+      skillName: WeaponBreaking
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 15
+      skillIndex: 0
+      skillCode: SKI_019_Slash
+      skillName: Slash
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 20
+      skillIndex: 0
+      skillCode: SKI_015_FurySwip
+      skillName: FurySwip
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 24
+      skillIndex: 0
+      skillCode: SKI_022_TitanForm
+      skillName: TitanForm
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 8
+      skillIndex: 0
+      skillCode: SKI_023_Heal
+      skillName: Heal
+      skillDescription: 
+      skillIconPath: 
+    ClassDesScription: A powerful and offensive melee fighter. His immense strength
+      and stamina make him a good tanker in battle.
+  - Class: SorceressClass
+    Health: 200
+    Mana: 300
+    Attack: 10
+    MagicAttack: 50
+    Defense: 10
+    MagicDefense: 20
+    Accuracy: 60
+    Flee: 20
+    Crit: 10
+    STR: 2
+    VIT: 1
+    AGI: 2
+    DEX: 2
+    INT: 4
+    LCK: 4
+    moves:
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_000_NormalAttack
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_000_Move
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_002_FireBall
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_007_FocusFire
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_013_LightingBall
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_012_Teleport
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_014_EarthDrive
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_018_TerraVortex
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_020_ThunderStrom
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    - skillLevel: 0
+      skillIndex: 0
+      skillCode: SKI_021_Explosion
+      skillName: 
+      skillDescription: 
+      skillIconPath: 
+    ClassDesScription: Her low Stamina and Defense may put her in danger at times
+      in battles but her ability to deal huge magic damage makes up for her weakness.
+  - Class: 
+    Health: 0
+    Mana: 0
+    Attack: 0
+    MagicAttack: 0
+    Defense: 0
+    MagicDefense: 0
+    Accuracy: 0
+    Flee: 0
+    Crit: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+    moves: []
+    ClassDesScription: 
+  - Class: 
+    Health: 0
+    Mana: 0
+    Attack: 0
+    MagicAttack: 0
+    Defense: 0
+    MagicDefense: 0
+    Accuracy: 0
+    Flee: 0
+    Crit: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+    moves: []
+    ClassDesScription: 
+  - Class: 
+    Health: 0
+    Mana: 0
+    Attack: 0
+    MagicAttack: 0
+    Defense: 0
+    MagicDefense: 0
+    Accuracy: 0
+    Flee: 0
+    Crit: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+    moves: []
+    ClassDesScription: 

@@ -1,0 +1,640 @@
+fileFormatVersion: 2
+guid: 54f550a41422c29408280aaf8897a8b0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2450017971188292470
+    second: ESPER_0
+  - first:
+      213: 3495811885503410123
+    second: ESPER_1
+  - first:
+      213: -7536404767704195433
+    second: ESPER_2
+  - first:
+      213: -9084823863961717239
+    second: ESPER_3
+  - first:
+      213: 3326612873824246871
+    second: ESPER_4
+  - first:
+      213: -4995164578056804884
+    second: ESPER_5
+  - first:
+      213: -7775434664805734260
+    second: ESPER_6
+  - first:
+      213: 4974958343256360800
+    second: ESPER_7
+  - first:
+      213: -7462760898304460234
+    second: ESPER_8
+  - first:
+      213: -7827317817566107059
+    second: ESPER_9
+  - first:
+      213: 4292693001822599342
+    second: ESPER_10
+  - first:
+      213: 4018978832352760538
+    second: ESPER_11
+  - first:
+      213: -1034736422735289541
+    second: ESPER_12
+  - first:
+      213: 7915373854646119533
+    second: ESPER_13
+  - first:
+      213: -8065157934303680323
+    second: ESPER_14
+  - first:
+      213: 7776695600505823674
+    second: ESPER_15
+  - first:
+      213: 1049791079612282895
+    second: ESPER_16
+  - first:
+      213: -4446727373801803163
+    second: ESPER_17
+  - first:
+      213: 7610713328574664784
+    second: ESPER_18
+  - first:
+      213: -5537903426471955191
+    second: ESPER_19
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ESPER_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 3719
+        width: 300
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b50023d56300220800000000000000
+      internalID: 2450017971188292470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_1
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 3723
+        width: 326
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfe405636e938030800000000000000
+      internalID: 3495811885503410123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_2
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 3715
+        width: 344
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e5e691bcf496790800000000000000
+      internalID: -7536404767704195433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_3
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 3721
+        width: 358
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906f19544d83ce180800000000000000
+      internalID: -9084823863961717239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_4
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 3303
+        width: 362
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c198998c08a2e20800000000000000
+      internalID: 3326612873824246871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_5
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 3293
+        width: 358
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce56f42284c9daab0800000000000000
+      internalID: -4995164578056804884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_6
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 3285
+        width: 354
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88eefd4e5b181490800000000000000
+      internalID: -7775434664805734260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_7
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3285
+        width: 336
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0674926314a9a0540800000000000000
+      internalID: 4974958343256360800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_8
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 2867
+        width: 316
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a33ec9082fe6890800000000000000
+      internalID: -7462760898304460234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_9
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 2853
+        width: 298
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ae2e37ae7cf5390800000000000000
+      internalID: -7827317817566107059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_10
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 2865
+        width: 292
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8f07f9a85b29b30800000000000000
+      internalID: 4292693001822599342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_11
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 2865
+        width: 296
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2533e54f746c730800000000000000
+      internalID: 4018978832352760538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 2449
+        width: 310
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3364bea4b0e3a1f0800000000000000
+      internalID: -1034736422735289541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_13
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 2469
+        width: 326
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ca896559e09dd60800000000000000
+      internalID: 7915373854646119533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_14
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 2459
+        width: 344
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8e76cf69dc21090800000000000000
+      internalID: -8065157934303680323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_15
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 2451
+        width: 362
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab12e7a227f5ceb60800000000000000
+      internalID: 7776695600505823674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_16
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 2037
+        width: 378
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08f9a4cc6b919e00800000000000000
+      internalID: 1049791079612282895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_17
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 2043
+        width: 348
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562b987630d0a42c0800000000000000
+      internalID: -4446727373801803163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_18
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 2057
+        width: 318
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0501605f27fae9960800000000000000
+      internalID: 7610713328574664784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ESPER_19
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 2063
+        width: 292
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90578b8bc2a6523b0800000000000000
+      internalID: -5537903426471955191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ESPER_0: 2450017971188292470
+      ESPER_1: 3495811885503410123
+      ESPER_10: 4292693001822599342
+      ESPER_11: 4018978832352760538
+      ESPER_12: -1034736422735289541
+      ESPER_13: 7915373854646119533
+      ESPER_14: -8065157934303680323
+      ESPER_15: 7776695600505823674
+      ESPER_16: 1049791079612282895
+      ESPER_17: -4446727373801803163
+      ESPER_18: 7610713328574664784
+      ESPER_19: -5537903426471955191
+      ESPER_2: -7536404767704195433
+      ESPER_3: -9084823863961717239
+      ESPER_4: 3326612873824246871
+      ESPER_5: -4995164578056804884
+      ESPER_6: -7775434664805734260
+      ESPER_7: 4974958343256360800
+      ESPER_8: -7462760898304460234
+      ESPER_9: -7827317817566107059
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

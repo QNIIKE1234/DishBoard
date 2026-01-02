@@ -1,0 +1,236 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &310654065849651300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8525460105670056756}
+  - component: {fileID: 2204258370231247484}
+  m_Layer: 0
+  m_Name: ArmorObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8525460105670056756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310654065849651300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.49318945, y: -0.5443729, z: 313.44403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2204258370231247484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310654065849651300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3419ed38eb096c489a72e2f88def473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor:
+  - ArmorIcon: {fileID: 21300000, guid: 96f272cc58755d34eb3c6232562f7fd1, type: 3}
+    setID: SET004_M
+    name: Warrior Armor
+    className: None
+    Type: Armor
+    Top: {fileID: 21300000, guid: 972134c108322de46a708d12f9e57c6d, type: 3}
+    Shoulder_L: {fileID: 21300000, guid: bad33d37543e15242a5baeec1143b4db, type: 3}
+    Shoulder_R: {fileID: 21300000, guid: d41887a8b8f9e694bae7edd2067e333a, type: 3}
+    Arm_L: {fileID: 21300000, guid: 94a235f1a6042aa4fbb7e9fa6ea3221e, type: 3}
+    Arm_R: {fileID: 21300000, guid: e1a33f9279b66d745932fb1e5a1f8211, type: 3}
+    Hand_L: {fileID: 21300000, guid: 5b7fdec3ed9b8274daf8e47d5763b2b8, type: 3}
+    Hand_R: {fileID: 21300000, guid: 6259bde58a22dff479b1058a1530a25c, type: 3}
+    Bottom_L: {fileID: 21300000, guid: 06a3efafee4d0e7439570a1dd124f930, type: 3}
+    Bottom_R: {fileID: 21300000, guid: 89932cb4fd47b7548a899eb238a7af33, type: 3}
+    Boot_L: {fileID: 21300000, guid: 85debc199e3ce2a49b83337323647fb0, type: 3}
+    Boot_R: {fileID: 21300000, guid: 804b80b1632ed8a449fd74f33efdfd92, type: 3}
+    DEFENSE: 15
+    MAGICDEFENSE: 5
+    HP: 120
+    MP: 60
+    FLEE: 5
+    STR: 3
+    VIT: 2
+    AGI: 0
+    INT: 1
+    DEX: 2
+    LCK: 2
+  - ArmorIcon: {fileID: 21300000, guid: 4f905d28ca9e5274ebf7cad4237952b8, type: 3}
+    setID: SET005_M
+    name: Mage Coat
+    className: None
+    Type: Armor
+    Top: {fileID: 21300000, guid: ab89096bca78447408b469ebf674837b, type: 3}
+    Shoulder_L: {fileID: 21300000, guid: aa4dd581cd573274da5fb0be7d515794, type: 3}
+    Shoulder_R: {fileID: 21300000, guid: 30b1625ea07d14e4f83e1dc1683d88c5, type: 3}
+    Arm_L: {fileID: 21300000, guid: 0d1e0675257a22348a4f3afa23d37b14, type: 3}
+    Arm_R: {fileID: 21300000, guid: 3576edc24b9e3e843acadd3ac9ca3a6d, type: 3}
+    Hand_L: {fileID: 21300000, guid: c3957df0ed381a04c8db914c5c549c71, type: 3}
+    Hand_R: {fileID: 21300000, guid: 93fea80d9f4844e4ca9023ae294921cf, type: 3}
+    Bottom_L: {fileID: 21300000, guid: c688f4955d34bb744bab10d16dd3ead0, type: 3}
+    Bottom_R: {fileID: 21300000, guid: 3376a3c24cbb51e4f936cf5e4d142806, type: 3}
+    Boot_L: {fileID: 21300000, guid: 85debc199e3ce2a49b83337323647fb0, type: 3}
+    Boot_R: {fileID: 21300000, guid: 804b80b1632ed8a449fd74f33efdfd92, type: 3}
+    DEFENSE: 10
+    MAGICDEFENSE: 15
+    HP: 60
+    MP: 120
+    FLEE: 0
+    STR: 1
+    VIT: 2
+    AGI: 0
+    INT: 3
+    DEX: 3
+    LCK: 1
+  helm:
+  - setID: ITM_HLM_001
+    name: WarriorHelm
+    className: 
+    Type: 
+    ImageIcon: {fileID: 21300000, guid: 4b6d8229a80b651479cb51ae86b15ae2, type: 3}
+    HelmIcon: {fileID: 21300000, guid: 6b7fe45720e07c449bf058df140201a5, type: 3}
+    DEFENSE: 5
+    MAGICDEFENSE: 10
+    HP: 0
+    MP: 0
+    FLEE: 0
+    STR: 5
+    VIT: 3
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0
+  - setID: ITM_HLM_002
+    name: 
+    className: 
+    Type: 
+    ImageIcon: {fileID: 21300000, guid: 97ad2d9f21d059f47930f7b13fd351dd, type: 3}
+    HelmIcon: {fileID: 21300000, guid: cdc9d1378402bc746a2b61513aff92e2, type: 3}
+    DEFENSE: 5
+    MAGICDEFENSE: 10
+    HP: 0
+    MP: 0
+    FLEE: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 5
+    DEX: 3
+    LCK: 0
+  - setID: ITM_HLM_003
+    name: JumpBugHelm
+    className: 
+    Type: 
+    ImageIcon: {fileID: 21300000, guid: 22a94130908350846bf1eb74f1e93305, type: 3}
+    HelmIcon: {fileID: 21300000, guid: 9f9a514380a72724d9e2c5475b645046, type: 3}
+    DEFENSE: 5
+    MAGICDEFENSE: 5
+    HP: 50
+    MP: 50
+    FLEE: 5
+    STR: 1
+    VIT: 0
+    AGI: 0
+    INT: 1
+    DEX: 3
+    LCK: 3
+  - setID: 
+    name: 
+    className: 
+    Type: 
+    ImageIcon: {fileID: 0}
+    HelmIcon: {fileID: 0}
+    DEFENSE: 0
+    MAGICDEFENSE: 0
+    HP: 0
+    MP: 0
+    FLEE: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0
+  - setID: 
+    name: 
+    className: 
+    Type: 
+    ImageIcon: {fileID: 0}
+    HelmIcon: {fileID: 0}
+    DEFENSE: 0
+    MAGICDEFENSE: 0
+    HP: 0
+    MP: 0
+    FLEE: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0
+  cape:
+  - setID: ITM_CPE_001
+    name: 
+    className: 
+    Type: 
+    ImageIcon: {fileID: 21300000, guid: 1ab681fbc6ef5544d99359a083979489, type: 3}
+    DEFENSE: 0
+    MAGICDEFENSE: 0
+    HP: 0
+    MP: 0
+    FLEE: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0
+  - setID: ITM_CPE_002
+    name: 
+    className: 
+    Type: 
+    ImageIcon: {fileID: 21300000, guid: 4784e016fe684c24cb7ec352f0039473, type: 3}
+    DEFENSE: 0
+    MAGICDEFENSE: 0
+    HP: 0
+    MP: 0
+    FLEE: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0
+  - setID: ITM_CPE_003
+    name: 
+    className: 
+    Type: 
+    ImageIcon: {fileID: 21300000, guid: 6d209c749b4dde34b94057ea837c5bac, type: 3}
+    DEFENSE: 0
+    MAGICDEFENSE: 0
+    HP: 0
+    MP: 0
+    FLEE: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    INT: 0
+    DEX: 0
+    LCK: 0

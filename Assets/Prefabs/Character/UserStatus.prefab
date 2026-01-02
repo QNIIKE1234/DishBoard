@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &872359857528822113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8894601953240983021}
+  - component: {fileID: 1498230485881978615}
+  m_Layer: 0
+  m_Name: UserStatus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8894601953240983021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872359857528822113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.702717, y: -0.08400819, z: -0.62444097}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1498230485881978615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872359857528822113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dfb1d1d52e118449ba8287e7f72d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UserId: 
+  Name: 
+  Email: 
+  currentIndex: 0
+  maxIndex: 1
+  COIN: 1500
+  classDatabase: {fileID: 4276743284473055898, guid: 6c8e8fd654e17a84f8f7c02932e1b4bd,
+    type: 3}
+  AllArmor: {fileID: 2204258370231247484, guid: b7f2527ce71689e4687d6efbbf662adb,
+    type: 3}
+  Allweapon: {fileID: 8734505611462476189, guid: df563283a6658514087ee27f641a7e3c,
+    type: 3}
+  IndexClass: 0
+  PName: Test
+  CName: 
+  Class: 
+  Gender: 
+  PLevel: 5
+  MAXHP: 0
+  HP: 0
+  MAXMP: 0
+  MP: 0
+  PHYSICALATTACK: 0
+  DEFENSE: 0
+  MAGICALATTACK: 0
+  MAGICDEFENSE: 0
+  ACCURACY: 0
+  FLEE: 0
+  CRIT: 5
+  ATTACKRANGE: 0
+  STR: 0
+  VIT: 0
+  AGI: 0
+  DEX: 0
+  INT: 0
+  LCK: 0
+  EXP: 0
+  WEAPON: 
+  OFFHAND: 
+  ARMOR: 
+  CAPE: 
+  HELM: 
+  levelStatusPlus:
+  - Class: WarriorClass
+    Health: 100
+    Mana: 50
+    Attack: 30
+    MagicAttack: 10
+    Defense: 10
+    MagicDefense: 5
+    Accuracy: 10
+    Flee: 5
+    STR: 10
+    VIT: 5
+    AGI: 0
+    DEX: 10
+    INT: 0
+    LCK: 0
+  - Class: 
+    Health: 0
+    Mana: 0
+    Attack: 0
+    MagicAttack: 0
+    Defense: 0
+    MagicDefense: 0
+    Accuracy: 0
+    Flee: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+  - Class: 
+    Health: 0
+    Mana: 0
+    Attack: 0
+    MagicAttack: 0
+    Defense: 0
+    MagicDefense: 0
+    Accuracy: 0
+    Flee: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+  - Class: 
+    Health: 0
+    Mana: 0
+    Attack: 0
+    MagicAttack: 0
+    Defense: 0
+    MagicDefense: 0
+    Accuracy: 0
+    Flee: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+  - Class: 
+    Health: 0
+    Mana: 0
+    Attack: 0
+    MagicAttack: 0
+    Defense: 0
+    MagicDefense: 0
+    Accuracy: 0
+    Flee: 0
+    STR: 0
+    VIT: 0
+    AGI: 0
+    DEX: 0
+    INT: 0
+    LCK: 0
+  ELEMENTAL: 0
+  ExpLength: 64000000c8000000900100005802000020030000e8030000b004000078050000dc0500004006000072060000a4060000d6060000080700006c070000d0070000020800003408000066080000b80b0000
