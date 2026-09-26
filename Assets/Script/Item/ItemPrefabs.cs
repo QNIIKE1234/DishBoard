@@ -17,9 +17,12 @@ public class ItemPrefabs : MonoBehaviour
     }
 
     public void onUse(){
-        foreach(Item target in PlayerData.Instance.InventoryItem){
-            if(target.itemID == item.itemID){
-                target.itemAmount--;
+        if (UserStatus.Instance != null && UserStatus.Instance.InventoryItem != null)
+        {
+            foreach(Item target in UserStatus.Instance.InventoryItem){
+                if(target.itemID == item.itemID){
+                    target.itemAmount--;
+                }
             }
         }
         skillUser.onUseItem(item,1);

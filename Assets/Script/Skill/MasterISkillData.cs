@@ -11,7 +11,7 @@ static class MasterISkillData
         new Skill(){skillIndex = 3 , skillCode = "SKI_004_WolfStrike" , skillName = "WolfStrike" , skillIconPath = "SKILLICON/108" , skillDescription = "Use Wolf soul attacks with wind damage and enemy is stunned."},
         new Skill(){skillIndex = 4 , skillCode = "SKI_006_HookShot" , skillName = "HookShot" , skillIconPath = "SKILLICON/28" , skillDescription = "pull enemies towards yourself 3 position."},
         new Skill(){skillIndex = 5 , skillCode = "SKI_007_FocusFire" , skillName = "FocusFire" , skillIconPath = "SKILLICON/86" , skillDescription = "Increases your attack range 1 position."},
-        new Skill(){skillIndex = 6 , skillCode = "SKI_008_PoisionBlade" , skillName = "PoisionBlade" , skillIconPath = "SKILLICON/15 " , skillDescription = "Attacks with poision damage and enemy is poisioned."},
+        new Skill(){skillIndex = 6 , skillCode = "SKI_008_PoisionBlade" , skillName = "PoisionBlade" , skillIconPath = "SKILLICON/15" , skillDescription = "Attacks with poision damage and enemy is poisioned."},
         new Skill(){skillIndex = 7 , skillCode = "SKI_009_GhostWalk" , skillName = "GhostWalk" , skillIconPath = "SKILLICON/56" , skillDescription = "Move yourself to the designated position and increase your evasion."},
         new Skill(){skillIndex = 8 , skillCode = "SKI_010_ShockWave" , skillName = "ShockWave" , skillIconPath = "SKILLICON/43" , skillDescription = "Attacks with high magic damage and push enemy 1 position"},
         new Skill(){skillIndex = 9 , skillCode = "SKI_000_NormalAttack" , skillName = "NormalAttack" , skillIconPath = "SKILLICON/Attack" , skillDescription = "Attacks with your damage."},
@@ -27,8 +27,8 @@ static class MasterISkillData
         new Skill(){skillIndex = 19 , skillCode = "SKI_020_ThunderStrom" , skillName = "ThunderStrom" , skillIconPath = "SKILLICON/113" , skillDescription = "Magic attacks with wind damage, and stunned. Make enemy bleed 2 wound."},
         new Skill(){skillIndex = 20 , skillCode = "SKI_021_Explosion" , skillName = "Explosion" , skillIconPath = "SKILLICON/14" , skillDescription = "Magic attacks with fire damage,Make burn and bleed 2 wound."},
         new Skill(){skillIndex = 21 , skillCode = "SKI_022_TitanForm" , skillName = "TitanForm" , skillIconPath = "SKILLICON/111" , skillDescription = "Double all statuses"},
-        new Skill(){skillIndex = 19 , skillCode = "SKI_023_Heal" , skillName = "Heal" , skillIconPath = "SKILLICON/110" , skillDescription = "Heal your self 20 percent of max HP"},
-        new Skill(){skillIndex = 19 , skillCode = "SKI_024_PoisonWave" , skillName = "PoisonWave" , skillIconPath = "SKILLICON/26" , skillDescription = "Attacks with poision damage and enemy is poisioned."},
+        new Skill(){skillIndex = 22 , skillCode = "SKI_023_Heal" , skillName = "Heal" , skillIconPath = "SKILLICON/110" , skillDescription = "Heal your self 20 percent of max HP"},
+        new Skill(){skillIndex = 23 , skillCode = "SKI_024_PoisonWave" , skillName = "PoisonWave" , skillIconPath = "SKILLICON/26" , skillDescription = "Attacks with poision damage and enemy is poisioned."},
 
     };
 

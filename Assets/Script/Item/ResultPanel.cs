@@ -41,8 +41,38 @@ public class ResultPanel : MonoBehaviour
 
     }
 
-    public void OnClose(){
-        onclick.Invoke();
+    private bool isClosed = false;
+
+    public void OnClose()
+    {
+        if (isClosed) return;
+        isClosed = true;
+
+        Button[] buttons = GetComponentsInChildren<Button>();
+        foreach (var btn in buttons)
+        {
+            if (btn != null) btn.interactable = false;
+        }
+
+        try
+        {
+            if (onclick != null)
+            {
+                if (onclick.Target is UnityEngine.Object unityObj && unityObj == null)
+                {
+                    Debug.LogWarning("[ResultPanel] Target object has been destroyed. Skipping callback.");
+                }
+                else
+                {
+                    onclick.Invoke();
+                }
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogWarning($"[ResultPanel] Exception invoking OnClose callback: {ex.Message}");
+        }
+
         Destroy(this.gameObject);
     }
 }

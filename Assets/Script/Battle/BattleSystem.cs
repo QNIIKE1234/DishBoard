@@ -45,6 +45,8 @@ public class BattleSystem : MonoBehaviour
 
     public bool isPlayerTurn = false;
     public bool isGameEnd = false;
+    private bool hasGameEnded = false;
+    private bool isTransitioning = false;
     public int skillCount = 0;
     int skillIndex;
     public List<Transform> positionData = new List<Transform>();
@@ -76,6 +78,9 @@ public class BattleSystem : MonoBehaviour
     }
   
     public void StartBattle(){
+        hasGameEnded = false;
+        isGameEnd = false;
+        isTransitioning = false;
         StartCoroutine(SetupBatttle());
         posMove = playerObject;
     }
@@ -122,14 +127,18 @@ public class BattleSystem : MonoBehaviour
 
 
 
-    public void UpdatePosition(bool playerSide , int value){
-        if(playerSide){
-            playerObject.transform.position = positionData[value].position;
-        }else{
-            enemyObject.transform.position = positionData[value].position;
+    public void UpdatePosition(bool playerSide, int value){
+        if (positionData == null || positionData.Count == 0) return;
+        int clampedIndex = Mathf.Clamp(value, 0, positionData.Count - 1);
+        if (playerSide) {
+            playerPosition = clampedIndex;
+            if (playerObject != null)
+                playerObject.transform.position = positionData[clampedIndex].position;
+        } else {
+            enemyPosition = clampedIndex;
+            if (enemyObject != null)
+                enemyObject.transform.position = positionData[clampedIndex].position;
         }
-
-
     }
 
     public void UpdatePlayerHP(bool playerSide , int value){
@@ -179,10 +188,9 @@ public class BattleSystem : MonoBehaviour
     public void onSelectMove(int _index){
         skillIndex = _index;
         CurrentSkill = SkillDatabase.Instance.skillcore.Find(skills => skills.skillID == playerUnit.skills[_index].skillCode);
-        if(CurrentSkill.moveSkill){
-            if(CurrentSkill.moveSkill){
-                dialogBox.onChoosePosition(true);
-            }
+        if (CurrentSkill != null && CurrentSkill.moveSkill)
+        {
+            dialogBox.onChoosePosition(true);
         }
         else
         {
@@ -221,10 +229,11 @@ public class BattleSystem : MonoBehaviour
         
         skillCount=0;
         for(int i=0; i<moveQueueData.Count; i++){
-            if(isGameEnd){
+            if(isGameEnd || hasGameEnded){
                 moveQueueData.Clear();
+                yield break;
             }
-            else if(playerUnit.HP>0 || enemyUnit.HP >=0){
+            else if(playerUnit.HP>0 && enemyUnit.HP >0){
                 if(moveQueueData[i].Side ==1){
                     StartCoroutine(PerformPlayerMove(moveQueueData[i].SkillIndex));
                 }else{
@@ -232,10 +241,14 @@ public class BattleSystem : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(3f);
+            if(isGameEnd || hasGameEnded){
+                moveQueueData.Clear();
+                yield break;
+            }
         }
 
 
-        if(state!=BattleState.End){
+        if(state!=BattleState.End && !isGameEnd && !hasGameEnded){
             PlayerAction();
             moveLength.Clear();
         }
@@ -383,10 +396,21 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator onDelaytime(float _delayTime){
         yield return new WaitForSeconds(_delayTime);
-        sceneChanger.ChangeScene("Dungeon");
+        if (sceneChanger != null)
+        {
+            sceneChanger.ChangeScene("Dungeon");
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Dungeon");
+        }
     }
 
     IEnumerator onGameEnd(bool Won){
+        if (hasGameEnded) yield break;
+        hasGameEnded = true;
+        isGameEnd = true;
+
         UserStatus.Instance.HP  = (int)playerHud.HP;
         UserStatus.Instance.MP  = (int)playerHud.MP;
         state = BattleState.End;
@@ -433,6 +457,8 @@ public class BattleSystem : MonoBehaviour
     }
 
     public void BackToDungeon(){
+        if (isTransitioning || this == null || !gameObject.activeInHierarchy) return;
+        isTransitioning = true;
         PopupManager.Instance.OpenLoading("isFadeIn");
         StartCoroutine(onDelaytime(2f));
     }
@@ -506,6 +532,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     public IEnumerator PerformMove(SkillDatabase.SkillCore skill,bool _isPlayer, List<GameObject> _VFX){
+        if (isGameEnd || hasGameEnded) yield break;
         bool isFainted = false;
         if(_isPlayer)
         {
@@ -531,8 +558,8 @@ public class BattleSystem : MonoBehaviour
             if(isFainted){
                 isGameEnd = true;
                 enemyUnit.enemyAnim.SetBool("onDie",true);
-                StartCoroutine(onGameEnd(isGameEnd));
                 moveQueueData.Clear();
+                StartCoroutine(onGameEnd(true));
                 yield break;
             
             }
@@ -563,8 +590,9 @@ public class BattleSystem : MonoBehaviour
             
             if(isFainted){
                 isGameEnd = true;
-                StartCoroutine(onGameEnd(isGameEnd));
                 moveQueueData.Clear();
+                StartCoroutine(onGameEnd(false));
+                yield break;
             }
             enemyDialogObject.SetActive(false);
             playerDialogObject.SetActive(false);                  

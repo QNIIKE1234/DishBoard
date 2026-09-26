@@ -34,24 +34,24 @@ public class ItemSkillDatabase : MonoBehaviour
 
     public void onUseHPPotion(){
         if(itemUse.itemAmount>0 && itemUse.itemValue<=10){
-            PlayerData.Instance.HP += (int)itemUse.itemValue*100;
+            UserStatus.Instance.HP += (int)itemUse.itemValue*100;
         }else{
-            PlayerData.Instance.HP += (int)itemUse.itemValue;
+            UserStatus.Instance.HP += (int)itemUse.itemValue;
         }
 
-        if(PlayerData.Instance.HP>PlayerData.Instance.MAXHP){
-            PlayerData.Instance.HP = PlayerData.Instance.MAXHP;
+        if(UserStatus.Instance.HP>UserStatus.Instance.MAXHP){
+            UserStatus.Instance.HP = UserStatus.Instance.MAXHP;
         }
     }
     public void onUseMPPotion(){
         if(itemUse.itemAmount>0 && itemUse.itemValue<=10){
-            PlayerData.Instance.MP += (int)itemUse.itemValue*100;
+            UserStatus.Instance.MP += (int)itemUse.itemValue*100;
         }else{
-            PlayerData.Instance.MP += (int)itemUse.itemValue;
+            UserStatus.Instance.MP += (int)itemUse.itemValue;
         }
 
-        if(PlayerData.Instance.MP>PlayerData.Instance.MAXMP){
-            PlayerData.Instance.MP = PlayerData.Instance.MAXMP;
+        if(UserStatus.Instance.MP>UserStatus.Instance.MAXMP){
+            UserStatus.Instance.MP = UserStatus.Instance.MAXMP;
         }
     }
 }

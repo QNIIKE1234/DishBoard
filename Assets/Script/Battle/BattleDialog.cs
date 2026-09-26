@@ -121,31 +121,38 @@ public class BattleDialog : MonoBehaviour
 
     public void SetMoveName(List<Skill> _move, int _Level)
     {
-        for (int i = 0; i<_move.Count; i++){
-            SkillDatabase.SkillCore skill = SkillDatabase.Instance.skillcore.Find(skill => skill.skillID == _move[i].skillCode);
-            moveList.Add(skill.skillID);
+        moveList.Clear();
+        if (_move == null) return;
+
+        for (int i = 0; i < _move.Count; i++){
+            if (i >= moveObject.Count || i >= moveTexts.Count || i >= moveSprite.Count) break;
+
+            if (_move[i] == null) continue;
+
+            SkillDatabase.SkillCore skill = SkillDatabase.Instance != null && SkillDatabase.Instance.skillcore != null
+                ? SkillDatabase.Instance.skillcore.Find(s => s != null && s.skillID == _move[i].skillCode)
+                : null;
+
             if (skill != null)
             {
-                if(_move[i].skillLevel<=_Level){
+                moveList.Add(skill.skillID);
+                if(_move[i].skillLevel <= _Level){
                     moveTexts[i].text = skill.skillName;
                     moveSprite[i].sprite = skill.skillIconPath;
                     moveObject[i].SetActive(true);
-
                 }else{
                     moveTexts[i].text = skill.skillName;
                     moveSprite[i].sprite = skill.skillIconPath;
                     moveObject[i].SetActive(false);
                 }
-
             }
             else
             {
+                moveList.Add(_move[i].skillCode);
                 moveTexts[i].text = "-";
-                // Optionally set a default sprite for moveSprite[i] if skill is not found
+                moveObject[i].SetActive(false);
             }
-
         }
-
     }
 
 

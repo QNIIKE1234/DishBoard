@@ -24,6 +24,8 @@ public class UserStatus : MonoBehaviour {
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); // ทำให้ไม่ถูกทำลายเมื่อเปลี่ยนฉาก
+            if (string.IsNullOrEmpty(Class) && !string.IsNullOrEmpty(CName)) Class = CName;
+            if (string.IsNullOrEmpty(CName) && !string.IsNullOrEmpty(Class)) CName = Class;
         }
         else
         {
@@ -161,37 +163,38 @@ public class UserStatus : MonoBehaviour {
     }
 
     public void GetExtraStat(){
-        if(Class == "WarriorClass"){
+        string currentClass = !string.IsNullOrEmpty(Class) ? Class : CName;
+        if(currentClass == "WarriorClass"){
             PHYSICALATTACK +=  (STR*5) + (DEX*2) + (PLevel*2);
             MAGICALATTACK +=  (INT*2)+ (DEX*1)+ (PLevel*2);
             MAGICDEFENSE +=  (INT*1)+(VIT*2)+ (PLevel*2);
             DEFENSE +=  (VIT*3)+ (PLevel*2);
             
-        }else if (Class == "SorceressClass"){
+        }else if (currentClass == "SorceressClass"){
             PHYSICALATTACK +=  (STR*2) + (DEX*2)+ (PLevel*2);
             MAGICALATTACK +=  (INT*5)+ (DEX*2)+ (PLevel*2);
             MAGICDEFENSE +=  (INT*3)+(VIT*3)+(PLevel*2);
             DEFENSE +=  (VIT*3)+(STR*1)+ (PLevel*2);       
         }
-        else if (Class == "ArcherClass"){
+        else if (currentClass == "ArcherClass"){
             PHYSICALATTACK +=  (STR*1) + (DEX*3)+ (PLevel*1);
             MAGICALATTACK +=  (INT*1)+ (DEX*1)+ (PLevel*1);
             MAGICDEFENSE +=  (INT*1)+(VIT*1)+ (PLevel*1);
             DEFENSE +=  (VIT*2)+ (PLevel*1);        
         }
-        else if (Class == "ClericClass"){
+        else if (currentClass == "ClericClass"){
             PHYSICALATTACK +=  (STR*3) + (DEX*1)+ (PLevel*1);
             MAGICALATTACK +=  (INT*2)+ (DEX*1)+ (PLevel*2);
             MAGICDEFENSE +=  (INT*1)+(VIT*1)+ (PLevel*1);
             DEFENSE +=  (VIT*2)+(INT*1)+ (PLevel*1);               
         }
-        else if (Class == "AcademicClass"){
+        else if (currentClass == "AcademicClass"){
             PHYSICALATTACK +=  (STR*2) + (DEX*1)+ (PLevel*1);
             MAGICALATTACK +=  (INT*2)+ (DEX*1)+ (PLevel*2);
             MAGICDEFENSE +=  (INT*1)+(VIT*1)+ (PLevel*1);
             DEFENSE +=  (VIT*2)+ (PLevel*1);               
         }
-        else if (Class == "TheifClass"){
+        else if (currentClass == "TheifClass"){
             PHYSICALATTACK +=  (STR*3) + (DEX*1) +(LCK*1)+ (PLevel*1);
             MAGICALATTACK +=   (INT*1)+ (DEX*1)+ (PLevel*1);
             MAGICDEFENSE +=  (INT*1)+(VIT*1)+ (PLevel*1);

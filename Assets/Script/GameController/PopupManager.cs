@@ -78,6 +78,12 @@ public class PopupManager : MonoBehaviour
 
     public void RewardResult(UnityAction _function,int _EXP, int _coins)
     {
+        ResultPanel existing = content.GetComponentInChildren<ResultPanel>();
+        if (existing != null)
+        {
+            Destroy(existing.gameObject);
+        }
+
         GameObject Damage = Instantiate(PopUpPrefab[5], content);
         ResultPanel Object = Damage.GetComponent<ResultPanel>();
         Object.SetData(_function,_EXP,_coins);

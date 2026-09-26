@@ -19,44 +19,36 @@ public class BattleHud : MonoBehaviour
     public bool isPlayer = false;
     public IEnumerator SetData(float _MAXHP,float _HP,float _MAXMP,float _MP,string _Name,int _Level,bool _isPlayer)
     {
-
-        MaxHP = _MAXMP;
+        MaxHP = _MAXHP;
         HP = _HP;
         MaxMP = _MAXMP;
         MP = _MP;
         Text_name.text = _Name;
         Text_LEVEL.text = " " + _Level;
-        isPlayer =_isPlayer;
+        isPlayer = _isPlayer;
 
-        if(isPlayer){
-            hpBar.SetHP(UserStatus.Instance.HP,true);
-            hpBar.SetMP(UserStatus.Instance.MP,true);
+        if (isPlayer)
+        {
+            hpBar.SetHP(UserStatus.Instance.MAXHP, UserStatus.Instance.HP, true);
+            hpBar.SetMP(UserStatus.Instance.MAXMP, UserStatus.Instance.MP, true);
         }
-        else{
-
-            hpBar.SetHP(HP);
-            hpBar.SetMP(MP);
+        else
+        {
+            hpBar.SetHP(MaxHP, HP, false);
+            hpBar.SetMP(MaxMP, MP, false);
         }
         yield return new WaitForSeconds(0.5f);
-
     }
 
-    public IEnumerator UpDateHP(float _MAXHP,float _HP,float _MAXMP,float _MP,bool _isPlayer){
-        isPlayer =_isPlayer;
+    public IEnumerator UpDateHP(float _MAXHP,float _HP,float _MAXMP,float _MP,bool _isPlayer)
+    {
+        isPlayer = _isPlayer;
         MaxHP = _MAXHP;
         HP = _HP;
         MaxMP = _MAXMP;
         MP = _MP;
-        if(isPlayer){
-            yield return hpBar.SetHPSmooth(_HP);
-            yield return hpBar.SetMPSmooth(_MP);
-        }
-        else{
-            yield return hpBar.SetHPSmooth(_HP);
-            yield return hpBar.SetMPSmooth(_MP);
-        }
-
-      
+        yield return hpBar.SetHPSmooth(_HP);
+        yield return hpBar.SetMPSmooth(_MP);
     }
 
     public IEnumerator UpDateEXP(){

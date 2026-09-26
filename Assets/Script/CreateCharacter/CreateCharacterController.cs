@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Firebase.Firestore;
-using Firebase.Extensions;
 using System.Threading.Tasks;
 public class CreateCharacterController : MonoBehaviour
 {
@@ -12,7 +10,6 @@ public class CreateCharacterController : MonoBehaviour
     [SerializeField] WeaponController _Weapon;
     [SerializeField] BattleDialog dialogBox;
     public SceneChanger sceneChanger;
-    private FirebaseFirestore firestore;
     public Animator sceneAnimator;
     public CharacterAnimationController player;
     public GameObject panelCharacter;
@@ -210,8 +207,11 @@ public class CreateCharacterController : MonoBehaviour
     public async void onClickPlay(){
         UserStatus.Instance.IndexClass = _indexClass;
         PlayerPrefs.SetString("PlayerName",playerName.text);
-        UserStatus.Instance.PName = PlayerPrefs.GetString("PlayerName");
-        UserStatus.Instance.CName =  classDatabase.classData[_indexClass].Class;
+        string selectedClass = classDatabase.classData[_indexClass].Class;
+        UserStatus.Instance.CName = selectedClass;
+        UserStatus.Instance.Class = selectedClass;
+        PlayerPrefs.SetString("PlayerClass", selectedClass);
+        PlayerPrefs.SetString("PlayerCharacterName", selectedClass);
         UserStatus.Instance.MAXHP =  classDatabase.classData[_indexClass].Health;
         UserStatus.Instance.HP =  classDatabase.classData[_indexClass].Health;
         UserStatus.Instance.MAXMP =  classDatabase.classData[_indexClass].Mana;
@@ -258,6 +258,7 @@ public class CreateCharacterController : MonoBehaviour
         }
         Debug.Log("playerClassName = "+UserStatus.Instance.CName);
         UserStatus.Instance.onUpdateData();
+        UserStatus.Instance.onRestoreHPandMP();
         
         await OnLoadLevel();
     }

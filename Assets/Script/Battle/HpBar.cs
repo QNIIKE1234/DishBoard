@@ -10,23 +10,31 @@ public class HpBar : MonoBehaviour
     public Slider ManathBar;
     public Slider EXPbar;
 
-    public void SetHP(float hpNormalized,bool isPlayer = false){
-        if(isPlayer){
-            HealthBar.maxValue = UserStatus.Instance.MAXHP;
-        }else{
-            HealthBar.maxValue = hpNormalized;
+    public void SetHP(float maxHp, float currentHp, bool isPlayer = false) {
+        if (HealthBar != null) {
+            HealthBar.maxValue = maxHp;
+            HealthBar.value = currentHp;
         }
-
-        HealthBar.value = hpNormalized;
-        SetUpEXP();
+        if (isPlayer) {
+            SetUpEXP();
+        }
     }
-    public void SetMP(float mpNormalized,bool isPlayer = false) {
-        if(isPlayer){
-            ManathBar.maxValue = UserStatus.Instance.MAXMP;
-        }else{
-            ManathBar.maxValue = mpNormalized;
+
+    public void SetHP(float hpNormalized, bool isPlayer = false) {
+        float max = isPlayer && UserStatus.Instance != null ? UserStatus.Instance.MAXHP : hpNormalized;
+        SetHP(max, hpNormalized, isPlayer);
+    }
+
+    public void SetMP(float maxMp, float currentMp, bool isPlayer = false) {
+        if (ManathBar != null) {
+            ManathBar.maxValue = maxMp;
+            ManathBar.value = currentMp;
         }
-        ManathBar.value = mpNormalized;
+    }
+
+    public void SetMP(float mpNormalized, bool isPlayer = false) {
+        float max = isPlayer && UserStatus.Instance != null ? UserStatus.Instance.MAXMP : mpNormalized;
+        SetMP(max, mpNormalized, isPlayer);
     }
     public IEnumerator SetHPSmooth(float newHp){
         float elapsedTime = 0f;
@@ -68,12 +76,16 @@ public class HpBar : MonoBehaviour
     }
 
     public void SetUpEXP(){
-        EXPbar.maxValue = UserStatus.Instance.ExpLength[UserStatus.Instance.PLevel];
-        EXPbar.value = UserStatus.Instance.EXP;
+        if (EXPbar != null && UserStatus.Instance != null && UserStatus.Instance.ExpLength != null && UserStatus.Instance.PLevel < UserStatus.Instance.ExpLength.Count) {
+            EXPbar.maxValue = UserStatus.Instance.ExpLength[UserStatus.Instance.PLevel];
+            EXPbar.value = UserStatus.Instance.EXP;
+        }
     }
     public IEnumerator SetLevelEXP(){
-        EXPbar.maxValue = UserStatus.Instance.ExpLength[UserStatus.Instance.PLevel];
-        EXPbar.value = UserStatus.Instance.EXP;
+        if (EXPbar != null && UserStatus.Instance != null && UserStatus.Instance.ExpLength != null && UserStatus.Instance.PLevel < UserStatus.Instance.ExpLength.Count) {
+            EXPbar.maxValue = UserStatus.Instance.ExpLength[UserStatus.Instance.PLevel];
+            EXPbar.value = UserStatus.Instance.EXP;
+        }
         yield return null;
     }
     public IEnumerator SetEXPSmooth(float curEXP){

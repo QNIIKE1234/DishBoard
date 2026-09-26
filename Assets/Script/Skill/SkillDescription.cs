@@ -19,14 +19,26 @@ public class SkillDescription : MonoBehaviour
         skillDuaration = _skillDuration;
 
         if(_isBuff){
-            Skill skill = MasterISkillData.masterSkillList.Find(s => s.skillName == _skillName);
-            imageIcon.sprite = Resources.Load<Sprite>(skill.skillIconPath);
-            buffName = skill.skillCode;
+            Skill skill = MasterISkillData.masterSkillList.Find(s => s != null && (s.skillName == _skillName || s.skillCode == _skillName));
+            if (skill != null)
+            {
+                if (!string.IsNullOrEmpty(skill.skillIconPath) && imageIcon != null)
+                {
+                    imageIcon.sprite = Resources.Load<Sprite>(skill.skillIconPath);
+                }
+                buffName = skill.skillCode;
+            }
         }
         else{
-            BuffAndDebuff debuff = MasterISkillData.masterBuffList.Find(b => b.BuffName == _skillName);
-            imageIcon.sprite = Resources.Load<Sprite>(debuff.BuffIconPath);
-            buffName = _skillName;
+            BuffAndDebuff debuff = MasterISkillData.masterBuffList.Find(b => b != null && (b.BuffName == _skillName || b.Index.ToString() == _skillName));
+            if (debuff != null)
+            {
+                if (!string.IsNullOrEmpty(debuff.BuffIconPath) && imageIcon != null)
+                {
+                    imageIcon.sprite = Resources.Load<Sprite>(debuff.BuffIconPath);
+                }
+                buffName = _skillName;
+            }
         }
 
         if(text_Duration!=null){

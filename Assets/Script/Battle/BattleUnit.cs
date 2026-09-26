@@ -99,12 +99,31 @@ public partial class BattleUnit : MonoBehaviour
             playerAnim.SetBool("onReady",true);
             //SetPlayerData
             //  UserStatus.Instance.character = UserStatus.Instance.character;
-            Class =  UserStatus.Instance.Class;
+            Class = !string.IsNullOrEmpty(UserStatus.Instance.Class) ? UserStatus.Instance.Class : UserStatus.Instance.CName;
+            if (string.IsNullOrEmpty(UserStatus.Instance.Class)) UserStatus.Instance.Class = Class;
+            if (string.IsNullOrEmpty(UserStatus.Instance.CName)) UserStatus.Instance.CName = Class;
+
+            if (UserStatus.Instance.PHYSICALATTACK < 120 && UserStatus.Instance.MAGICALATTACK < 120)
+            {
+                UserStatus.Instance.GetExtraStat();
+            }
+
             Level =  UserStatus.Instance.PLevel;
             MaxHP =  UserStatus.Instance.MAXHP;
             HP =  UserStatus.Instance.HP;
             MaxMP =  UserStatus.Instance.MAXMP;
             MP =  UserStatus.Instance.MP;
+
+            if (HP <= 0 || HP > MaxHP)
+            {
+                HP = MaxHP;
+                UserStatus.Instance.HP = MaxHP;
+            }
+            if (MP <= 0 || MP > MaxMP)
+            {
+                MP = MaxMP;
+                UserStatus.Instance.MP = MaxMP;
+            }
             STR =  UserStatus.Instance.STR;
             VIT = UserStatus.Instance.VIT;
             AGI =  UserStatus.Instance.AGI;
@@ -176,14 +195,71 @@ public partial class BattleUnit : MonoBehaviour
     public List<Skill> GetSkillData(){
         List<Skill> skills = new List<Skill>();
 
-        foreach(SkillDatabase.SkillCore addSkill in SkillDatabase.Instance.skillcore){
-            if(UserStatus.Instance.STR >= addSkill.STR && UserStatus.Instance.INT >= addSkill.INT&&
-                UserStatus.Instance.VIT >= addSkill.VIT && UserStatus.Instance.DEX >= addSkill.DEX &&
-                UserStatus.Instance.AGI >= addSkill.AGI && UserStatus.Instance.LCK >= addSkill.LCK){
+        // 1. Always guarantee basic skills (Normal Attack & Move)
+        string[] basicSkills = new string[] { "SKI_000_NormalAttack", "SKI_000_Move" };
+        foreach (string basicCode in basicSkills)
+        {
+            Skill basicSkill = MasterISkillData.masterSkillList.Find(s => s != null && s.skillCode == basicCode);
+            if (basicSkill != null && !skills.Exists(s => s.skillCode == basicCode))
+            {
+                skills.Add(basicSkill);
+            }
+        }
 
-                Skill newSkill = MasterISkillData.masterSkillList.Find(skills => skills.skillCode == addSkill.skillID);
-                skills.Add(newSkill);
+        // 2. Add class skills from classDatabase based on player's level
+        if (UserStatus.Instance != null && UserStatus.Instance.classDatabase != null && UserStatus.Instance.classDatabase.classData != null)
+        {
+            var classData = UserStatus.Instance.classDatabase.classData.Find(c => 
+                c != null && (c.Class == UserStatus.Instance.CName || c.Class == UserStatus.Instance.Class));
+            
+            if (classData == null && UserStatus.Instance.IndexClass >= 0 && UserStatus.Instance.IndexClass < UserStatus.Instance.classDatabase.classData.Count)
+            {
+                classData = UserStatus.Instance.classDatabase.classData[UserStatus.Instance.IndexClass];
+            }
 
+            if (classData != null && classData.moves != null)
+            {
+                foreach (var classMove in classData.moves)
+                {
+                    if (classMove != null && classMove.skillLevel <= UserStatus.Instance.PLevel)
+                    {
+                        Skill foundSkill = MasterISkillData.masterSkillList.Find(s => s != null && s.skillCode == classMove.skillCode);
+                        if (foundSkill != null && !skills.Exists(s => s.skillCode == foundSkill.skillCode))
+                        {
+                            foundSkill.skillLevel = classMove.skillLevel;
+                            skills.Add(foundSkill);
+                        }
+                    }
+                }
+            }
+        }
+
+        // 3. Also check stat-based unlocked skills (with clamped non-negative stats so negative AGI penalties don't block skills)
+        if (SkillDatabase.Instance != null && SkillDatabase.Instance.skillcore != null && UserStatus.Instance != null)
+        {
+            int pStr = Mathf.Max(0, UserStatus.Instance.STR);
+            int pInt = Mathf.Max(0, UserStatus.Instance.INT);
+            int pVit = Mathf.Max(0, UserStatus.Instance.VIT);
+            int pDex = Mathf.Max(0, UserStatus.Instance.DEX);
+            int pAgi = Mathf.Max(0, UserStatus.Instance.AGI);
+            int pLck = Mathf.Max(0, UserStatus.Instance.LCK);
+
+            foreach (SkillDatabase.SkillCore addSkill in SkillDatabase.Instance.skillcore)
+            {
+                if (addSkill == null) continue;
+
+                int reqInt = (addSkill.skillID == "SKI_003_BraveSpirit") ? 0 : addSkill.INT;
+
+                if (pStr >= addSkill.STR && pInt >= reqInt &&
+                    pVit >= addSkill.VIT && pDex >= addSkill.DEX &&
+                    pAgi >= addSkill.AGI && pLck >= addSkill.LCK)
+                {
+                    Skill newSkill = MasterISkillData.masterSkillList.Find(s => s != null && s.skillCode == addSkill.skillID);
+                    if (newSkill != null && !skills.Exists(s => s.skillCode == newSkill.skillCode))
+                    {
+                        skills.Add(newSkill);
+                    }
+                }
             }
         }
 
@@ -191,42 +267,60 @@ public partial class BattleUnit : MonoBehaviour
     }
 
 
-   public bool CalculateMagicalPoint(SkillDatabase.SkillCore _move){
-        float curMP =  MP;
-       
-        curMP =curMP- _move.SkillCost;
-        if(isPlayerUnit){
+    public bool CalculateMagicalPoint(SkillDatabase.SkillCore _move)
+    {
+        if (_move == null) return false;
+
+        if (MP < _move.SkillCost)
+        {
+            // Not enough mana
+            return true;
+        }
+
+        MP -= _move.SkillCost;
+        if (isPlayerUnit)
+        {
             StartCoroutine(SetNewMP(_move.SkillCost));
         }
-       if((curMP) > 0){
-           MP =  MP-_move.SkillCost;
-           return false;
-       }
- 
-     return true;   
 
-   }
+        return false;
+    }
 
    public bool CalculateDamage(SkillDatabase.SkillCore _move ,int _PATK ,int _MATK,float _ACCURACY,int _Level,int _Crit)
    {
         List<string> damage = new List<string>();
-        int FinalSum=0;
-        float modifier = Random.Range(0.85f,1f);
-        float PDamage = (((float)_PATK - (float)Defense )*(_move.attackSkill[0].SkillPhysicalAttack/100)) ;
-        float MDamage = (((float)_MATK - (float)SpellGuard )*(_move.attackSkill[0].SkillMagicalAttack/100)) ;
-        float FinalDamage = (PDamage+MDamage)+(_Level+10);
+        int FinalSum = 0;
+        float modifier = Random.Range(0.85f, 1f);
+
+        float physRatio = (_move.attackSkill != null && _move.attackSkill.Count > 0) ? (_move.attackSkill[0].SkillPhysicalAttack / 100f) : 1f;
+        float magRatio = (_move.attackSkill != null && _move.attackSkill.Count > 0) ? (_move.attackSkill[0].SkillMagicalAttack / 100f) : 0f;
+
+        float physDamage = 0f;
+        float magDamage = 0f;
+
+        if (physRatio > 0f)
+        {
+            float rawPhys = _PATK * physRatio;
+            physDamage = Mathf.Max(rawPhys * 0.25f, rawPhys - ((float)Defense * 0.5f));
+        }
+
+        if (magRatio > 0f)
+        {
+            float rawMag = _MATK * magRatio;
+            magDamage = Mathf.Max(rawMag * 0.25f, rawMag - ((float)SpellGuard * 0.5f));
+        }
+
+        if (physRatio <= 0f && magRatio <= 0f)
+        {
+            float rawPhys = _PATK;
+            physDamage = Mathf.Max(rawPhys * 0.25f, rawPhys - ((float)Defense * 0.5f));
+        }
+
+        float FinalDamage = (physDamage + magDamage) + (_Level + 10);
         float sumElemnt = ElementDamage(_move.elementType.ToString());
         int sumDamage = Mathf.FloorToInt(FinalDamage);
-        if(PDamage<=0){
-            PDamage = 1;
-        }
-        if(MDamage<=0){
-            MDamage = 1;
-        }
-
 
         //-------------------------------------------------------------------------------------------------------
-  
 
         for(int i=0; i<_move.SkillHit; i++){
 
@@ -234,8 +328,9 @@ public partial class BattleUnit : MonoBehaviour
                 float SumDamage = onCalculateDamage(modifier,sumDamage,sumElemnt,FinalDamage);
 
                 if(onCritical(_Crit)){
-                    damage.Add(""+(int)(SumDamage*3f));
-                    FinalSum += (int)SumDamage;
+                    int critDmg = (int)(SumDamage * 3f);
+                    damage.Add(""+critDmg);
+                    FinalSum += critDmg;
                 }
 
                 else if(!onMissDamage){
@@ -243,12 +338,8 @@ public partial class BattleUnit : MonoBehaviour
                     FinalSum += (int)SumDamage;   
                 }
 
-                else if(sumDamage ==0 && modifier ==0){
-                     damage.Add("Miss !!");
-                }
-
                 else{
-                     damage.Add("Miss!!");
+                     damage.Add("Miss !!");
                 }           
         }
 
@@ -303,11 +394,15 @@ public partial class BattleUnit : MonoBehaviour
     }
 
     public IEnumerator SetNewHP(int value){
-       UserStatus.Instance.HP = UserStatus.Instance.HP-value;
+        if (UserStatus.Instance != null) {
+            UserStatus.Instance.HP = Mathf.Max(0, UserStatus.Instance.HP - value);
+        }
         yield return new WaitForSeconds(1f);
     }
     public IEnumerator SetNewMP(int value){
-        UserStatus.Instance.MP = UserStatus.Instance.MP-value;
+        if (UserStatus.Instance != null) {
+            UserStatus.Instance.MP = Mathf.Max(0, UserStatus.Instance.MP - value);
+        }
         yield return new WaitForSeconds(1f);
 
     }
@@ -341,6 +436,7 @@ public partial class BattleUnit : MonoBehaviour
     }
 
     public IEnumerator onPlayAnim(string _type,List<GameObject> _move){
+        if (battleSystem == null) yield break;
         if(isPlayerUnit){
             if(_type == "Attack"){
 

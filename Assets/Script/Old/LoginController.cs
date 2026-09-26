@@ -1,10 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Firebase;
-using Firebase.Auth;
-using Firebase.Firestore;
-using Firebase.Extensions;
 using TMPro;
 using System.Threading.Tasks;
 
